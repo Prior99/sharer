@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<title>Share</title>
 		<script src="jquery-2.1.1.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script type="text/html" id="progressbar_template">
@@ -18,13 +19,18 @@
 			</a>
 		</script>
 		<script type="text/javascript">
+			function cropName(filename) {
+				if(r.filename.length > 30) r.filename = r.filename.substring(0, 20) + "...";
+				return filename;
+			}
+
 			$(function() {
 				$("input").change(function() {
 					var formdata = new FormData($("form")[0]);
 					var value = $("input").val().split("\\");
 					value = value[value.length -1];
 					var progress = $($("#progressbar_template").html()).appendTo("body");
-					progress.find(".text").html(value);
+					progress.find(".text").html(cropName(value));
 
 					function updateProgress(e) {
 						if(e.lengthComputable) {
@@ -55,8 +61,7 @@
 								(function(r) {
 									var done = $($("#finished_template").html());
 									done.attr("href", "download.php?id=" + r.id);
-									if(r.filename.length > 20) r.filename = r.filename.substring(0, 20) + "...";
-									done.html(r.filename);
+									done.html(cropName(r.filename));
 									done.insertAfter(progress);
 								})(response[i]);
 							}
