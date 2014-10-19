@@ -16,6 +16,35 @@ body {
 	border-radius: 4px;
 }
 
+.listelem {
+	width: 1024px;
+	text-align: left;
+}
+
+a {
+	color: rgb(179, 179, 179);
+	font-size: 20px;
+}
+
+a:hover {
+	color: rgb(103, 255, 105);
+}
+
+.listelem div {
+	overflow: hidden;
+	float: left;
+	margin-left: 8px;
+}
+
+.listelem a {
+	color: rgb(179, 179, 179);
+	font-size: 30px;
+}
+
+.listelem:hover a {
+	color: rgb(103, 255, 105);
+}
+
 .fileWrapper {
 	overlow: hidden;
 	height: 200px;
@@ -54,7 +83,7 @@ body {
 .fileWrapper:hover{
 	border: 4px solid rgb(103, 255, 105);
 	background-color: rgba(103, 255, 105, 0.2);
-	color: rgb(103, 255, 105);
+	
 }
 
 .fileWrapper span{
