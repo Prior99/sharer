@@ -3,6 +3,7 @@
 	<head>
 		<title>Share</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	</head>
 	<body>
 		<?php
@@ -16,8 +17,8 @@
 				return round($size) . $endings[$i];
 			}
 			function name_format($name) {
-				if(strlen($name) > 32) {
-					$name = substr($name, 0, 29) . "...";
+				if(strlen($name) > 29) {
+					$name = substr($name, 0, 26) . "...";
 				}
 				return $name;
 			}
