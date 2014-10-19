@@ -43,7 +43,7 @@
 		}
 		
 		public function listHashes() {
-			$query = $this->db()->prepare("SELECT hash FROM IDs");
+			$query = $this->db()->prepare("SELECT hash FROM IDs ORDER BY id DESC LIMIT 200");
 			$query->execute();
 			$query->bind_result($hash);
 			$arr = Array();

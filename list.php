@@ -15,6 +15,12 @@
 				}
 				return round($size) . $endings[$i];
 			}
+			function name_format($name) {
+				if(strlen($name) > 32) {
+					$name = substr($name, 0, 29) . "...";
+				}
+				return $name;
+			}
 			require_once("sharer.php");
 			$sharer = new Sharer();
 			$hashes = $sharer->listHashes();
@@ -22,13 +28,13 @@
 				$file = $sharer->retrieveFileInfo($hash);
 				?>
 					<div class="download listelem">
-						<div style="width : 520px;">
-							<?php echo($file["filename"]);?>
+						<div style="width : 500px;">
+							<?php echo(name_format($file["filename"]));?>
 						</div>
 						<div style="width : 300px;">
 							<?php echo(date("d.m.y H:i:s", $file["uploaded"]));?>
 						</div>
-						<div style="width : 90px;">
+						<div style="width : 120px;">
 							<?php echo(size_format($file["size"]));?>
 						</div>
 						<div style="width : 70px;">

@@ -34,6 +34,7 @@ a:hover {
 	overflow: hidden;
 	float: left;
 	margin-left: 8px;
+	height: 30px;
 }
 
 .listelem a {
