@@ -1,0 +1,18 @@
+{
+  "name": "sharer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "share.sh",
+  "scripts": {
+    "test": "./share.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.cronosx.de:prior/sharer.git"
+  },
+  "author": "Prior (Frederick Gnodtke)",
+  "license": "GPL",
+  "dependencies": {
+    "request": "^2.49.0"
+  }
+}
