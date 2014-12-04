@@ -41,6 +41,18 @@
 			$query->close();
 			return $hash;
 		}
+		
+		public function listHashes() {
+			$query = $this->db()->prepare("SELECT hash FROM IDs ORDER BY id DESC LIMIT 200");
+			$query->execute();
+			$query->bind_result($hash);
+			$arr = Array();
+			while($query->fetch()) {
+				$arr[] = $hash;
+			}			
+			$query->close();
+			return $arr;
+		}
 
 		public function retrieveFileInfo($hash)  {
 			$query = $this->db()->prepare("SELECT f.mime, f.filename, f.uploaded, f.ip, f.size, f.password FROM IDs i LEFT JOIN Files f ON f.id = i.file WHERE i.hash = ?");

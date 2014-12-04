@@ -29,7 +29,7 @@
 					var formdata = new FormData($("form")[0]);
 					var value = $("input").val().split("\\");
 					value = value[value.length -1];
-					var progress = $($("#progressbar_template").html()).appendTo("body");
+					var progress = $($("#progressbar_template").html()).appendTo("#target");
 					progress.find(".text").html(cropName(value));
 
 					function updateProgress(e) {
@@ -81,5 +81,9 @@
 				<input type="file" name="upload[]" multiple="multiple"/>
 			</div>
 		</form>
+		<div id="target" style="margin-bottom: 20px;" >
+		
+		</div>
+		<a href="list.php">Index</a>
 	</body>
 </html>
